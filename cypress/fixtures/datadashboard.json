@@ -1,0 +1,18 @@
+{
+    "Name" : "William Odading",
+    "Company" : "Odading co",
+    "Address" : "dading Street 123",
+    "City" : "Odading City",
+    "Phone" : "1234533",
+    "Email" : "admin@odading.co",
+
+    "search_name" : "William Odading",
+    "search_email" : "admin@odading.co",
+
+    "edit_name" : "William bucket",
+    "edit_company" : "bucket co",
+    "edit_address" : "bucket Street 123",
+    "edit_city" : "bucket City",
+    "edit_phone" : "123453311",
+    "edit_email" : "admin@bucket.co"
+}
