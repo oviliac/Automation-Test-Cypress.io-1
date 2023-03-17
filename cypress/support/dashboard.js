@@ -31,5 +31,13 @@ class dashboard {
     detail_email = ':nth-child(12)'
 
     page_title_edit = 'Edit'
+    page_title_details = 'Details'
+    page_title_delete = 'Delete'
+
+    delete_confirmation_text = 'Are you sure you want to delete this?'
+    delete_information = '.container > div'
+    confirm_delete_button = '.btn-outline-danger'
+
+    customer_detail = 'Customer Details'
 }
 export default dashboard;
