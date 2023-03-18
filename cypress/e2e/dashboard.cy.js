@@ -82,6 +82,10 @@ describe('Login', () => {
     cy.get(Dashboard.form_email).type(datadashboard.edit_email)
     cy.get(Dashboard.form_submit).click()
     cy.get(Dashboard.page_title).contains(Dashboard.customer_detail).should('be.visible')
+    cy.get(Dashboard.search_input).type(datadashboard.edit_name)
+    cy.get(Dashboard.search_submit).click()
+    cy.get(Dashboard.table_first_name).contains(datadashboard.edit_name).should('be.visible')
+    cy.get(Dashboard.table_first_email).contains(datadashboard.edit_email).should('be.visible')
   })
   it('delete a customer', () => {
     cy.get(Dashboard.search_input).type(datadashboard.edit_name)
