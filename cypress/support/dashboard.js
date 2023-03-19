@@ -39,5 +39,9 @@ class dashboard {
     confirm_delete_button = '.btn-outline-danger'
 
     customer_detail = 'Customer Details'
+
+    back_to_list_button = '.btn-link'
+
+    not_match = 'td'
 }
 export default dashboard;

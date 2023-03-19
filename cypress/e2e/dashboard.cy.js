@@ -41,6 +41,12 @@ describe('Login', () => {
     cy.get(Dashboard.table_first_name).contains(datadashboard.Name).should('be.visible')
     cy.get(Dashboard.table_first_email).contains(datadashboard.Email).should('be.visible')
   })
+  it('search by keywords that do not match', () => {
+    cy.get(Dashboard.search_input).type(datadashboard.notmatch_keyword)
+    cy.get(Dashboard.search_submit).click()
+    cy.get(Dashboard.not_match).contains(datadashboard.notmatch_message).should('be.visible')
+  })
+  // Customer detail
   it('see a customer detail', () => {
     cy.get(Dashboard.search_input).type(datadashboard.Email)
     cy.get(Dashboard.search_submit).click()
@@ -60,6 +66,17 @@ describe('Login', () => {
     cy.get(Dashboard.detail_phone).contains(datadashboard.Phone).should('be.visible')
     // Email
     cy.get(Dashboard.detail_email).contains(datadashboard.Email).should('be.visible')
+  })
+  it('see a customer detail then back to dashboard', () => {
+    cy.get(Dashboard.search_input).type(datadashboard.Name)
+    cy.get(Dashboard.search_submit).click()
+    cy.get(Dashboard.table_first_name).contains(datadashboard.Name).should('be.visible')
+    cy.get(Dashboard.details_button).click()
+    cy.get(Dashboard.page_title).contains(Dashboard.page_title_details).should('be.visible')
+    cy.get(Dashboard.detail_name).contains(datadashboard.Name).should('be.visible')
+    cy.get(Dashboard.detail_email).contains(datadashboard.Email).should('be.visible')
+    cy.get(Dashboard.back_to_list_button).click()
+    cy.get(Dashboard.dashboard_title).contains(Dashboard.dashboard_title_text).should('be.visible')
   })
   it('edit a customer', () => {
     cy.get(Dashboard.search_input).type(datadashboard.Email)
